@@ -25,6 +25,7 @@
     <Compile Include="modulation_analyzer.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="qam_modulator.cpp" />
     <Content Include="requirements.txt" />
   </ItemGroup>
