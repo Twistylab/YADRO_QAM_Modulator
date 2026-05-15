@@ -24,7 +24,7 @@
 Содержит:
 
 - `AWGNAdder` - класс выполняющий функциональность добавления гауссовского шума к созвездию QAM;
-- `ModulatorGrey` - класс выполняющий функциональность модулятора QAM (QPSK, QAM16, QAM64) с кодированием Грея;
+- `ModulatorGrey` - класс выполняющий функциональность модулятора QAM (QPSK, QAM16, QAM64) с кодом Грея;
 - `DemodulatorGrey` - класс выполняющий функциональность демодулятора QAM (QPSK, QAM16, QAM64);
 - `generate_bits_vector` - генерацию случайного битового вектора;
 - `compute_ber` - расчёт **BER**;
@@ -55,6 +55,14 @@ QPSK, QAM16, QAM64
 
 Модуль визуализации результатов (графики **BER vs SNR** и **BER vs noise variance**).
 
+!(ber_vs_snr_and_variance.png)
+
+### `constellations_with_Gray.py`
+
+Модуль визуализации сигнальных созвездий (нормированных и нет) для типов модуляции `QPSK`, `QAM16`, `QAM64` с кодом Грея.
+
+!(constellations.png)
+
 ### `requirements.txt`
 
 Файл с Python-зависимостями.
@@ -62,10 +70,6 @@ QPSK, QAM16, QAM64
 Сейчас проект использует:
 
 - `matplotlib==3.10.9`.
-
-### `ber_vs_snr_and_variance.png`
-
-Пример визуализации результатов моделирования для типов модуляции `QPSK`, `QAM16`, `QAM64`.
 
 ### `qam_modulator.exe`
 
