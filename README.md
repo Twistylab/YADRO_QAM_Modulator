@@ -55,13 +55,13 @@ QPSK, QAM16, QAM64
 
 Модуль визуализации результатов (графики **BER vs SNR** и **BER vs noise variance**).
 
-!(ber_vs_snr_and_variance.png)
+![](ber_vs_snr_and_variance.png)
 
 ### `constellations_with_Gray.py`
 
 Модуль визуализации сигнальных созвездий (нормированных и нет) для типов модуляции `QPSK`, `QAM16`, `QAM64` с кодом Грея.
 
-!(constellations.png)
+![](constellations.png)
 
 ### `requirements.txt`
 
