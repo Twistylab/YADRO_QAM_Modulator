@@ -112,13 +112,31 @@ $$
 Компоненты вектора $\vec{x}$ найдём из следующего уравнение:
 
 $$
-\begin{array}
+\left(\begin{array}
 1 & 1 \\
 0 & 1
-\end{array} \cdot \begin{array} x_0 \\ x_1 \end{array} = \begin{array} -1 \\ 1 \end{array} \quad \Rightarrow \quad \begin{array} x_0 \\ x_1 \end{array} = \begin{array}
+\end{array}\right) \cdot \left(\begin{array}
+x_0 \\
+x_1
+\end{array}\right) = \left(\begin{array}
+-1 \\
+1
+\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}
+x_0 \\
+x_1
+\end{array}\right) = \left(\begin{array}
 1 & -1 \\
 0 & 1
-\end{array} \cdot \begin{array} -1 \\ 1 \end{array} \quad \Rightarrow \quad \begin{array} x_0 \\ x_1 \end{array} = \begin{array} -2 \\ 1 \end{array}
+\end{array}\right) \cdot \left(\begin{array}
+-1 \\
+1
+\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}
+x_0 \\
+x_1
+\end{array}\right) = \left(\begin{array}
+-2 \\
+1
+\end{array}\right)
 $$
 
 Получили следующее отображение:
@@ -136,17 +154,47 @@ $$
 Найдём $\vec{x}$ для `QAM16`:
 
 $$
-\begin{array}
+\left(\begin{array}
 1 & 1 & 1 & 1 \\
 1 & 0 & 0 & 1 \\
 0 & 0 & 0 & 1 \\
 0 & 1 & 0 & 1
-\end{array} \cdot \begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \end{array} = \begin{array} -3 \\ -1 \\ 1 \\ 3 \end{array} \quad \Rightarrow \quad \begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \end{array} = \begin{array}
+\end{array}\right) \cdot \left(\begin{array}
+x_0 \\
+x_1 \\
+x_2 \\
+x_3
+\end{array}\right) = \left(\begin{array}
+-3 \\
+-1 \\
+1 \\
+3
+\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}
+x_0 \\
+x_1 \\
+x_2 \\
+x_3
+\end{array}\right) = \left(\begin{array}
 0 & 1 & -1 & 0 \\
 0 & 0 & -1 & 1 \\
 1 & -1 & 1 & -1 \\
 0 & 0 & 1 & 0
-\end{array} \cdot \begin{array} -3 \\ -1 \\ 1 \\ 3 \end{array} \quad \Rightarrow \quad \begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \end{array} = \begin{array} -2 \\ 2 \\ -4 \\ 1 \end{array}
+\end{array}\right) \cdot \left(\begin{array}
+-3 \\
+-1 \\
+1 \\
+3
+\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}
+x_0 \\
+x_1 \\
+x_2 \\
+x_3
+\end{array}\right) = \left(\begin{array}
+-2 \\
+2 \\
+-4 \\
+1
+\end{array}\right)
 $$
 
 Получили следующее отображение:
@@ -161,7 +209,7 @@ $$
 Найдём $\vec{x}$ для `QAM64`:
 
 $$
-\begin{array}
+\left(\begin{array}
 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
 1 & 1 & 0 & 1 & 0 & 0 & 0 & 1 \\
 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
@@ -170,11 +218,39 @@ $$
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 \\
 0 & 1 & 1 & 0 & 1 & 0 & 0 & 1
-\end{array} \cdot \begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \end{array} = \begin{array} -7 \\ -5 \\ -3 \\ -1 \\ 1 \\ 3 \\ 5 \\ 7 \end{array} \quad \Rightarrow
+\end{array}\right) \cdot \left(\begin{array}
+x_0 \\
+x_1 \\
+x_2 \\
+x_3 \\
+x_4 \\
+x_5 \\
+x_6 \\
+x_7
+\end{array}\right) = \left(\begin{array}
+-7 \\
+-5 \\
+-3 \\
+-1 \\
+1 \\
+3 \\
+5 \\
+7
+\end{array}\right) \quad \Rightarrow
 $$
 
 $$
-\Rightarrow \quad \begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \end{array}=\begin{array}
+\Rightarrow \quad \left(\begin{array}
+x_0 \\
+x_1 \\
+x_2 \\
+x_3 \\
+x_4 \\
+x_5 \\
+x_6 \\
+x_7
+\end{array}\right)=
+\left(\begin{array}
 0 & 0 & 1 & 0 & 0 & -1 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & -1 & 1 & 0 \\
 0 & 0 & 0 & 0 & 1 & -1 & 0 & 0 \\
@@ -183,8 +259,35 @@ $$
 0 & 0 & -1 & 1 & -1 & 1 & 0 & 0 \\
 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 \\
 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0
-\end{array} \cdot \begin{array} -7 \\ -5 \\ -3 \\ -1 \\ 1 \\ 3 \\ 5 \\ 7 \end{array} \quad \Rightarrow \quad
-\begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \end{array} = \begin{array} -6 \\ 2 \\ -2 \\ -4 \\ 4 \\ 4 \\ -8 \\ 3 \end{array}
+\end{array}\right) \cdot \left(\begin{array}
+-7 \\
+-5 \\
+-3 \\
+-1 \\
+1 \\
+3 \\
+5 \\
+7
+\end{array}\right) \quad \Rightarrow \quad
+\left(\begin{array}
+x_0 \\
+x_1 \\
+x_2 \\
+x_3 \\
+x_4 \\
+x_5 \\
+x_6 \\
+x_7
+\end{array}\right) = \left(\begin{array}
+-6 \\
+2 \\
+-2 \\
+-4 \\
+4 \\
+4 \\
+-8 \\
+3
+\end{array}\right)
 $$
 
 Получили следующее отображение:
