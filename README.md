@@ -8,10 +8,12 @@
 .
 ├── modulation_analyzer.py
 ├── plot_ber.py
+├── constellations_with_Gray.py
 ├── qam_modulator.cpp
 ├── qam_modulator.exe
 ├── requirements.txt
 ├── ber_vs_snr_and_variance.png
+├── constellations.png
 └── .gitignore
 ```
 
@@ -105,7 +107,7 @@ $$
 B_I \cdot \vec{x} = \vec{\alpha}_{I} \quad \Rightarrow \quad \vec{x} = B^{-1}_I \vec{\alpha}_{I}
 $$
 
-где $B_I$ - матрица, состаящая из битовых комбинаций.
+где $B_I$ - матрица, состоящая из битовых комбинаций.
 
 Рассмотрим пример данного отображения для модуляции `QPSK` ($M=4$):
 
