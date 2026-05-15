@@ -64,7 +64,7 @@ public:
         case 16: alpha = [mean_power](const vector<bool>& bits) {return (-2 * bits[0] + 2 * bits[1] - 4 * bits[0] * bits[1] + 1) / sqrt(mean_power);};
                break;
 
-        case 64: alpha = [mean_power](const vector<bool>& bits) {return (-6 * bits[0] + 2 * bits[1] - 2 * bits[2] - 4 * bits[0] * bits[1] + 4 * bits[0] * bits[2] + 4 * bits[1] * bits[2] - 8 * bits[0] * bits[1] * bits[2] + 3) / sqrt(mean_power);};
+        case 64: alpha = [mean_power](const vector<bool>& bits) {return (-6 * bits[0] + 2 * bits[1] - 2 * bits[2] - 4 * bits[0] * bits[1] + 4 * bits[1] * bits[2] + 4 * bits[0] * bits[2] - 8 * bits[0] * bits[1] * bits[2] + 3) / sqrt(mean_power);};
         }
     }
 
