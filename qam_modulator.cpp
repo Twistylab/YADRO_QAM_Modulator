@@ -99,7 +99,7 @@ public:
 
         for (int number = 0; number < (components_number); number++) {
             for (int bit = 0; bit < bits_per_components; bit++) {
-                bits_comb[number][bit] = (number >> bit) & 1;
+                bits_comb[number][bit] = (number >> (bits_per_components - 1 - bit)) & 1;
             }
             components_comb[number] = alpha(bits_comb[number]);
         }
