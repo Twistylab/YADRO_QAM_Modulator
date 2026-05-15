@@ -28,14 +28,14 @@ public:
     }
 };
 
-class ModulatorGrey {
+class ModulatorGray {
 protected:
     int bits_per_symbol;
     int bits_per_components;
     int components_number;
     function<double(const vector<bool>&)> alpha;
 public:
-    ModulatorGrey(int modulation_size) {
+    ModulatorGray(int modulation_size) {
         bits_per_symbol = static_cast<int>(log2(modulation_size));
         bits_per_components = static_cast<int>(bits_per_symbol / 2);
 
@@ -88,12 +88,12 @@ public:
     }
 };
 
-class DemodulatorGrey : protected ModulatorGrey {
+class DemodulatorGray : protected ModulatorGray {
 private:
     vector<vector<bool>> bits_comb;
     vector<double> components_comb;
 public:
-    DemodulatorGrey(int modulation_size) : ModulatorGrey(modulation_size) {
+    DemodulatorGray(int modulation_size) : ModulatorGray(modulation_size) {
         bits_comb = vector<vector<bool>>(components_number, vector<bool>(bits_per_components));
         components_comb = vector<double>(components_number);
 
@@ -205,11 +205,11 @@ int main(int argc, char* argv[]) {
 
             vector<bool> tx_bits = generate_bits_vector(bits_number);
 
-            vector<complex<double>> signal_tx = ModulatorGrey(modulation_size).modulate(tx_bits);
+            vector<complex<double>> signal_tx = ModulatorGray(modulation_size).modulate(tx_bits);
 
             vector<complex<double>> noise_signal = AWGNAdder(noise_variance).add_awgn(signal_tx);
 
-            vector<bool> rx_bits = DemodulatorGrey(modulation_size).demodulate(noise_signal);
+            vector<bool> rx_bits = DemodulatorGray(modulation_size).demodulate(noise_signal);
 
             double ber = compute_ber(tx_bits, rx_bits);
 
