@@ -76,31 +76,41 @@ QPSK, QAM16, QAM64
 ## Математическое описание модуляции
 
 Зададим отображение битового вектора $\vec{b}$ в вектор модуляционных символов $\vec{\alpha}$:
+
 $$
 \vec{\alpha} = F(\vec{b})
 $$
+
 Данное отображение может быть описано следующим образом:
+
 $$
 \alpha_k = b_0x_0 + b_2x_1 + \ldots + b_{2m}x_m + b_0b_2x_{m+1} + b_0b_4x_{m+2} + \ldots + b_{2m-2}b_{2m}x_{m^2} + b_0b_2b_4x_{m^2 + 1} + \ldots + x_{\sqrt{M} - 1}, \quad k = 0 \ \ldots \ \sqrt{M} - 1
 $$
+
 где чётность порядка битов из битового вектора будем выбирать исходя из компоненты модуляционного символа: I (`In-phase`) или Q (`Quadrature`).
 
 Компоненты вектора $\vec{\alpha}$ вычисляются следующим образом:
+
 $$
 \alpha_k = -\sqrt{M} + 1 + 2 \cdot k
 $$
 
 Перепишем отображение в матричном виде:
+
 $$
 B_I \cdot \vec{x} = \vec_{\alpha}_{I} \quad \Rightarrow \quad \vec{x} = B^{-1}_I \vec_{\alpha}_{I}
 $$
+
 где $B_I$ - матрица, состаящая из битовых комбинаций.
 
 Рассмотрим пример данного отображения для модуляции `QPSK` ($M=4$):
+
 $$
 \alpha_0 = b_0x_0 + x_1, \quad \alpha_1 = b_1x_0 + x_1
 $$
+
 Компоненты вектора $\vec{x} найдём из следующего уравнение:
+
 $$
 \begin{pmatrix}
 1 & 1 \\
@@ -110,7 +120,9 @@ $$
 0 & 1
 \end{pmatrix} \cdot \begin{pmatrix} -1 \\ 1 \end{pmatrix} \quad \Rightarrow \quad \begin{pmatrix} x_0 \\ x_1 \end{pmatrix} = \begin{pmatrix} -2 \\ 1 \end{pmatrix}
 $$
+
 Получили следующее отображение:
+
 $$
 \left[\begin{aligned}
 &I = -2 \cdot b_0 + 1 \\
@@ -122,6 +134,7 @@ $$
 Столбцы данной матрицы как раз будут заполняться в начале комбинациями битов $b_0, b_2, \ldots$ с учётом кодировки Грея, а далее результатами операции логической "И" $b_0b_2$ или, что то же самое, произведение.
 
 Найдём $\vec{x}$ для `QAM16`:
+
 $$
 \begin{pmatrix}
 1 & 1 & 1 & 1 \\
@@ -135,7 +148,9 @@ $$
 0 & 0 & 1 & 0
 \end{pmatrix} \cdot \begin{pmatrix} -3 \\ -1 \\ 1 \\ 3 \end{pmatrix} \quad \Rightarrow \quad \begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} -2 \\ 2 \\ -4 \\ 1 \end{pmatrix}
 $$
+
 Получили следующее отображение:
+
 $$
 \left[\begin{aligned}
 &I = -2 \cdot b_0 + 2 \cdot b_2 -4 \cdot b_0b_2 + 1 \\
@@ -144,6 +159,7 @@ $$
 $$
 
 Найдём $\vec{x}$ для `QAM64`:
+
 $$
 \begin{pmatrix}
 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
@@ -168,7 +184,9 @@ $$
 \end{pmatrix \cdot \begin{pmatrix} -7 \\ -5 \\ -3 \\ -1 \\ 1 \\ 3 \\ 5 \\ 7 \end{pmatrix} \quad \Rightarrow \quad
 \begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \end{pmatrix} = \begin{pmatrix} -6 \\ 2 \\ -2 \\ -4 \\ 4 \\ 4 \\ -8 \\ 3 \end{pmatrix}
 $$
+
 Получили следующее отображение:
+
 $$
 \left[\begin{aligned}
 &I = -6 \cdot b_0 + 2 \cdot b_2 - 2 \cdot b_4 -4 \cdot b_0b_2 + 4 \cdot b_2b_4 + 4 \cdot b_0b_4 - 8 \cdot b_0b_2b_4 + 3 \\
