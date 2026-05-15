@@ -20,7 +20,7 @@ def plot_ber(modulations):
             for row in reader:
                 snr = float(row["snr"])
                 ber = float(row["ber"])
-                if ber >= 1e-6:
+                if ber >= 1e-5:
                     df["snr"].append(snr)
                     df["ber"].append(ber)
                 else:
@@ -37,8 +37,8 @@ def plot_ber(modulations):
     ax_snr.tick_params(axis='both', labelsize=12)
     ax_var.tick_params(axis='both', labelsize=12)
 
-    ax_snr.set_ylim(bottom=1e-6)
-    ax_var.set_ylim(bottom=1e-6)
+    ax_snr.set_ylim(bottom=1e-5)
+    ax_var.set_ylim(bottom=1e-5)
 
     ax_snr.set_title("BER vs SNR", fontsize=20)
     ax_snr.set_xlabel("SNR, dB", fontsize=18)
