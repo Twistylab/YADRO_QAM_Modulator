@@ -142,7 +142,7 @@ $$
 Получили следующее отображение:
 
 $$
-\begin{cases}{l}
+\begin{cases}
 I = -2 \cdot b_0 + 1 \\
 Q = -2 \cdot b_1 + 1
 \end{cases}
@@ -200,7 +200,7 @@ $$
 Получили следующее отображение:
 
 $$
-\begin{cases}{l}
+\begin{cases}
 I = -2 \cdot b_0 + 2 \cdot b_2 -4 \cdot b_0b_2 + 1 \\
 Q = -2 \cdot b_1 + 2 \cdot b_3 -4 \cdot b_1b_3 + 1
 \end{cases}
@@ -293,7 +293,7 @@ $$
 Получили следующее отображение:
 
 $$
-\begin{cases}{l}
+\begin{cases}
 I = -6 \cdot b_0 + 2 \cdot b_2 - 2 \cdot b_4 -4 \cdot b_0b_2 + 4 \cdot b_2b_4 + 4 \cdot b_0b_4 - 8 \cdot b_0b_2b_4 + 3 \\
 Q = -6 \cdot b_1 + 2 \cdot b_3 - 2 \cdot b_5 -4 \cdot b_1b_3 + 4 \cdot b_3b_5 + 4 \cdot b_1b_5 - 8 \cdot b_1b_3b_5 + 3
 \end{cases}
