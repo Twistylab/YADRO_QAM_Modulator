@@ -112,28 +112,28 @@ $$
 Компоненты вектора $\vec{x}$ найдём из следующего уравнение:
 
 $$
-\left(\begin{array}
+\left(\begin{array}{cc}
 1 & 1 \\
 0 & 1
-\end{array}\right) \cdot \left(\begin{array}
+\end{array}\right) \cdot \left(\begin{array}{c}
 x_0 \\
 x_1
-\end{array}\right) = \left(\begin{array}
+\end{array}\right) = \left(\begin{array}{c}
 -1 \\
 1
-\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}
+\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}{c}
 x_0 \\
 x_1
-\end{array}\right) = \left(\begin{array}
+\end{array}\right) = \left(\begin{array}{cc}
 1 & -1 \\
 0 & 1
-\end{array}\right) \cdot \left(\begin{array}
+\end{array}\right) \cdot \left(\begin{array}{c}
 -1 \\
 1
-\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}
+\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}{c}
 x_0 \\
 x_1
-\end{array}\right) = \left(\begin{array}
+\end{array}\right) = \left(\begin{array}{c}
 -2 \\
 1
 \end{array}\right)
@@ -142,7 +142,7 @@ $$
 Получили следующее отображение:
 
 $$
-\begin{cases}
+\begin{cases}{l}
 I = -2 \cdot b_0 + 1 \\
 Q = -2 \cdot b_1 + 1
 \end{cases}
@@ -154,42 +154,42 @@ $$
 Найдём $\vec{x}$ для `QAM16`:
 
 $$
-\left(\begin{array}
+\left(\begin{array}{cccc}
 1 & 1 & 1 & 1 \\
 1 & 0 & 0 & 1 \\
 0 & 0 & 0 & 1 \\
 0 & 1 & 0 & 1
-\end{array}\right) \cdot \left(\begin{array}
+\end{array}\right) \cdot \left(\begin{array}{c}
 x_0 \\
 x_1 \\
 x_2 \\
 x_3
-\end{array}\right) = \left(\begin{array}
+\end{array}\right) = \left(\begin{array}{c}
 -3 \\
 -1 \\
 1 \\
 3
-\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}
+\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}{c}
 x_0 \\
 x_1 \\
 x_2 \\
 x_3
-\end{array}\right) = \left(\begin{array}
+\end{array}\right) = \left(\begin{array}{cccc}
 0 & 1 & -1 & 0 \\
 0 & 0 & -1 & 1 \\
 1 & -1 & 1 & -1 \\
 0 & 0 & 1 & 0
-\end{array}\right) \cdot \left(\begin{array}
+\end{array}\right) \cdot \left(\begin{array}{c}
 -3 \\
 -1 \\
 1 \\
 3
-\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}
+\end{array}\right) \quad \Rightarrow \quad \left(\begin{array}{c}
 x_0 \\
 x_1 \\
 x_2 \\
 x_3
-\end{array}\right) = \left(\begin{array}
+\end{array}\right) = \left(\begin{array}{c}
 -2 \\
 2 \\
 -4 \\
@@ -200,7 +200,7 @@ $$
 Получили следующее отображение:
 
 $$
-\begin{cases}
+\begin{cases}{l}
 I = -2 \cdot b_0 + 2 \cdot b_2 -4 \cdot b_0b_2 + 1 \\
 Q = -2 \cdot b_1 + 2 \cdot b_3 -4 \cdot b_1b_3 + 1
 \end{cases}
@@ -209,7 +209,7 @@ $$
 Найдём $\vec{x}$ для `QAM64`:
 
 $$
-\left(\begin{array}
+\left(\begin{array}{cccccccc}
 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
 1 & 1 & 0 & 1 & 0 & 0 & 0 & 1 \\
 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
@@ -218,7 +218,7 @@ $$
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 \\
 0 & 1 & 1 & 0 & 1 & 0 & 0 & 1
-\end{array}\right) \cdot \left(\begin{array}
+\end{array}\right) \cdot \left(\begin{array}{c}
 x_0 \\
 x_1 \\
 x_2 \\
@@ -227,7 +227,7 @@ x_4 \\
 x_5 \\
 x_6 \\
 x_7
-\end{array}\right) = \left(\begin{array}
+\end{array}\right) = \left(\begin{array}{c}
 -7 \\
 -5 \\
 -3 \\
@@ -240,7 +240,7 @@ x_7
 $$
 
 $$
-\Rightarrow \quad \left(\begin{array}
+\Rightarrow \quad \left(\begin{array}{c}
 x_0 \\
 x_1 \\
 x_2 \\
@@ -250,7 +250,7 @@ x_5 \\
 x_6 \\
 x_7
 \end{array}\right)=
-\left(\begin{array}
+\left(\begin{array}{cccccccc}
 0 & 0 & 1 & 0 & 0 & -1 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & -1 & 1 & 0 \\
 0 & 0 & 0 & 0 & 1 & -1 & 0 & 0 \\
@@ -259,7 +259,7 @@ x_7
 0 & 0 & -1 & 1 & -1 & 1 & 0 & 0 \\
 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 \\
 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0
-\end{array}\right) \cdot \left(\begin{array}
+\end{array}\right) \cdot \left(\begin{array}{c}
 -7 \\
 -5 \\
 -3 \\
@@ -269,7 +269,7 @@ x_7
 5 \\
 7
 \end{array}\right) \quad \Rightarrow \quad
-\left(\begin{array}
+\left(\begin{array}{c}
 x_0 \\
 x_1 \\
 x_2 \\
@@ -278,7 +278,7 @@ x_4 \\
 x_5 \\
 x_6 \\
 x_7
-\end{array}\right) = \left(\begin{array}
+\end{array}\right) = \left(\begin{array}{c}
 -6 \\
 2 \\
 -2 \\
@@ -293,7 +293,7 @@ $$
 Получили следующее отображение:
 
 $$
-\begin{cases}
+\begin{cases}{l}
 I = -6 \cdot b_0 + 2 \cdot b_2 - 2 \cdot b_4 -4 \cdot b_0b_2 + 4 \cdot b_2b_4 + 4 \cdot b_0b_4 - 8 \cdot b_0b_2b_4 + 3 \\
 Q = -6 \cdot b_1 + 2 \cdot b_3 - 2 \cdot b_5 -4 \cdot b_1b_3 + 4 \cdot b_3b_5 + 4 \cdot b_1b_5 - 8 \cdot b_1b_3b_5 + 3
 \end{cases}
