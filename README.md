@@ -84,7 +84,7 @@ $$
 Данное отображение может быть описано следующим образом:
 
 $$
-\alpha_k = b_0x_0 + b_2x_1 + \ldots + b_{2m}x_m + b_0b_2x_{m+1} + b_0b_4x_{m+2} + \ldots + b_{2m-2}b_{2m}x_{m^2} + b_0b_2b_4x_{m^2 + 1} + \ldots + x_{\sqrt{M} - 1}, \quad k = 0 \ \ldots \ \sqrt{M} - 1
+\alpha_k = b_0x_0 + b_2x_1 + \ldots + b_0b_4x_{m+2} + \ldots + b_0b_2b_4x_{m^2 + 1} + \ldots + x_{\sqrt{M} - 1}, \quad k = 0 \ \ldots \ \sqrt{M} - 1
 $$
 
 где чётность порядка битов из битового вектора будем выбирать исходя из компоненты модуляционного символа: I (`In-phase`) или Q (`Quadrature`).
@@ -98,7 +98,7 @@ $$
 Перепишем отображение в матричном виде:
 
 $$
-B_I \cdot \vec{x} = \vec_{\alpha}_{I} \quad \Rightarrow \quad \vec{x} = B^{-1}_I \vec_{\alpha}_{I}
+B_I \cdot \vec{x} = \vec{\alpha}_{I} \quad \Rightarrow \quad \vec{x} = B^{-1}_I \vec{\alpha}_{I}
 $$
 
 где $B_I$ - матрица, состаящая из битовых комбинаций.
@@ -109,25 +109,25 @@ $$
 \alpha_0 = b_0x_0 + x_1, \quad \alpha_1 = b_1x_0 + x_1
 $$
 
-Компоненты вектора $\vec{x} найдём из следующего уравнение:
+Компоненты вектора $\vec{x}$ найдём из следующего уравнение:
 
 $$
-\begin{pmatrix}
+\begin{array}
 1 & 1 \\
 0 & 1
-\end{pmatrix} \cdot \begin{pmatrix} x_0 \\ x_1 \end{pmatrix} = \begin{pmatrix} -1 \\ 1 \end{pmatrix} \quad \Rightarrow \quad \begin{pmatrix} x_0 \\ x_1 \end{pmatrix} = \begin{pmatrix}
+\end{array} \cdot \begin{array} x_0 \\ x_1 \end{array} = \begin{array} -1 \\ 1 \end{array} \quad \Rightarrow \quad \begin{array} x_0 \\ x_1 \end{array} = \begin{array}
 1 & -1 \\
 0 & 1
-\end{pmatrix} \cdot \begin{pmatrix} -1 \\ 1 \end{pmatrix} \quad \Rightarrow \quad \begin{pmatrix} x_0 \\ x_1 \end{pmatrix} = \begin{pmatrix} -2 \\ 1 \end{pmatrix}
+\end{array} \cdot \begin{array} -1 \\ 1 \end{array} \quad \Rightarrow \quad \begin{array} x_0 \\ x_1 \end{array} = \begin{array} -2 \\ 1 \end{array}
 $$
 
 Получили следующее отображение:
 
 $$
-\left[\begin{aligned}
-&I = -2 \cdot b_0 + 1 \\
-&Q = -2 \cdot b_1 + 1
-\end{aligned} \right.
+\begin{cases}
+I = -2 \cdot b_0 + 1 \\
+Q = -2 \cdot b_1 + 1
+\end{cases}
 $$
 
 Для QAM-модуляций размером $M$ матрица $B$ будет иметь размер $\sqrt{M} \times \sqrt{M}$.
@@ -136,32 +136,32 @@ $$
 Найдём $\vec{x}$ для `QAM16`:
 
 $$
-\begin{pmatrix}
+\begin{array}
 1 & 1 & 1 & 1 \\
 1 & 0 & 0 & 1 \\
 0 & 0 & 0 & 1 \\
 0 & 1 & 0 & 1
-\end{pmatrix} \cdot \begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} -3 \\ -1 \\ 1 \\ 3 \end{pmatrix} \quad \Rightarrow \quad \begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix}
+\end{array} \cdot \begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \end{array} = \begin{array} -3 \\ -1 \\ 1 \\ 3 \end{array} \quad \Rightarrow \quad \begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \end{array} = \begin{array}
 0 & 1 & -1 & 0 \\
 0 & 0 & -1 & 1 \\
 1 & -1 & 1 & -1 \\
 0 & 0 & 1 & 0
-\end{pmatrix} \cdot \begin{pmatrix} -3 \\ -1 \\ 1 \\ 3 \end{pmatrix} \quad \Rightarrow \quad \begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} -2 \\ 2 \\ -4 \\ 1 \end{pmatrix}
+\end{array} \cdot \begin{array} -3 \\ -1 \\ 1 \\ 3 \end{array} \quad \Rightarrow \quad \begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \end{array} = \begin{array} -2 \\ 2 \\ -4 \\ 1 \end{array}
 $$
 
 Получили следующее отображение:
 
 $$
-\left[\begin{aligned}
-&I = -2 \cdot b_0 + 2 \cdot b_2 -4 \cdot b_0b_2 + 1 \\
-&Q = -2 \cdot b_1 + 2 \cdot b_3 -4 \cdot b_1b_3 + 1
-\end{aligned} \right.
+\begin{cases}
+I = -2 \cdot b_0 + 2 \cdot b_2 -4 \cdot b_0b_2 + 1 \\
+Q = -2 \cdot b_1 + 2 \cdot b_3 -4 \cdot b_1b_3 + 1
+\end{cases}
 $$
 
 Найдём $\vec{x}$ для `QAM64`:
 
 $$
-\begin{pmatrix}
+\begin{array}
 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
 1 & 1 & 0 & 1 & 0 & 0 & 0 & 1 \\
 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
@@ -170,9 +170,11 @@ $$
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 \\
 0 & 1 & 1 & 0 & 1 & 0 & 0 & 1
-\end{pmatrix} \cdot \begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \end{pmatrix} = \begin{pmatrix} -7 \\ -5 \\ -3 \\ -1 \\ 1 \\ 3 \\ 5 \\ 7 \end{pmatrix} \quad \Rightarrow \quad
-\begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \end{pmatrix} = 
-\begin{pmatrix}
+\end{array} \cdot \begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \end{array} = \begin{array} -7 \\ -5 \\ -3 \\ -1 \\ 1 \\ 3 \\ 5 \\ 7 \end{array} \quad \Rightarrow
+$$
+
+$$
+\Rightarrow \quad \begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \end{array}=\begin{array}
 0 & 0 & 1 & 0 & 0 & -1 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0 & -1 & 1 & 0 \\
 0 & 0 & 0 & 0 & 1 & -1 & 0 & 0 \\
@@ -181,15 +183,15 @@ $$
 0 & 0 & -1 & 1 & -1 & 1 & 0 & 0 \\
 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 \\
 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0
-\end{pmatrix \cdot \begin{pmatrix} -7 \\ -5 \\ -3 \\ -1 \\ 1 \\ 3 \\ 5 \\ 7 \end{pmatrix} \quad \Rightarrow \quad
-\begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \end{pmatrix} = \begin{pmatrix} -6 \\ 2 \\ -2 \\ -4 \\ 4 \\ 4 \\ -8 \\ 3 \end{pmatrix}
+\end{array} \cdot \begin{array} -7 \\ -5 \\ -3 \\ -1 \\ 1 \\ 3 \\ 5 \\ 7 \end{array} \quad \Rightarrow \quad
+\begin{array} x_0 \\ x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \end{array} = \begin{array} -6 \\ 2 \\ -2 \\ -4 \\ 4 \\ 4 \\ -8 \\ 3 \end{array}
 $$
 
 Получили следующее отображение:
 
 $$
-\left[\begin{aligned}
-&I = -6 \cdot b_0 + 2 \cdot b_2 - 2 \cdot b_4 -4 \cdot b_0b_2 + 4 \cdot b_2b_4 + 4 \cdot b_0b_4 - 8 \cdot b_0b_2b_4 + 3 \\
-&Q = -6 \cdot b_1 + 2 \cdot b_3 - 2 \cdot b_5 -4 \cdot b_1b_3 + 4 \cdot b_3b_5 + 4 \cdot b_1b_5 - 8 \cdot b_1b_3b_5 + 3
-\end{aligned} \right.
+\begin{cases}
+I = -6 \cdot b_0 + 2 \cdot b_2 - 2 \cdot b_4 -4 \cdot b_0b_2 + 4 \cdot b_2b_4 + 4 \cdot b_0b_4 - 8 \cdot b_0b_2b_4 + 3 \\
+Q = -6 \cdot b_1 + 2 \cdot b_3 - 2 \cdot b_5 -4 \cdot b_1b_3 + 4 \cdot b_3b_5 + 4 \cdot b_1b_5 - 8 \cdot b_1b_3b_5 + 3
+\end{cases}
 $$
